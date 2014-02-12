@@ -49,9 +49,9 @@
 }	
 .fb-slideshow li div h3 {
 	font-family: 'Segoe UI', 'Lucida Grande', Tahoma, Verdana, Arial, sans-serif;
-	font-size:36pt;
+	font-size:25pt;
 	padding:0;
-	line-height:40pt;
+	line-height:25pt;
 	text-transform:uppercase;
 }
 
@@ -130,7 +130,7 @@
 }
 
 @media screen and (max-width: 1140px) { 
-    .fb-slideshow li div h3 { font-size:20pt; line-height:24pt; }
+    .fb-slideshow li div h3 { font-size:15pt; line-height:24pt; }
 }
 @media screen and (max-width: 600px) { 
     .fb-slideshow li div h3 { font-size:9pt; line-height:12pt; }
@@ -139,4 +139,13 @@
 /* animations not supported */
 .no-cssanimations .fb-slideshow li span{
 	opacity:0;
+}
+
+.logo {
+	position: absolute;
+	z-index: 2000;
+	width: 100%;
+	height: 100%;
+	margin-top: 20px;
+	text-align: center;
 }

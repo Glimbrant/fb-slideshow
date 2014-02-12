@@ -1,14 +1,18 @@
+<div class="logo">
+	<img src="images/logo.png" alt="">
+</div>
+
 <ul class="fb-slideshow">
 <?php
 	$facebook = new Facebook(array(
-		'appId'  => 'YOUR_APPID_GOES_HERE',
-		'secret' => 'YOUR_SECRET_GOES_HERE',
+		'appId'  => '226663804022170',
+		'secret' => 'a43a9fbc0ed2b081d0526b254df0ff92',
 		'cookie' => false
 	));
 
 	$fb_rdata = $facebook->api(array(
 		'method'   => 'fql.query',
-		'query'    => 'SELECT pid, src, src_small, src_big, caption FROM photo WHERE aid = "599802953370465_150315" ORDER BY created DESC LIMIT 6',
+		'query'    => 'SELECT pid, src, src_small, src_big, caption FROM photo WHERE album_object_id = "604579966262993" ORDER BY created DESC',
 		'callback' => ''
 	));
 
@@ -19,7 +23,7 @@
 		echo('<li>'.chr(13).chr(10));
 		echo('<span style="background-image:url(\''.$fb_jdata['src_big'].'\'); '.$anim_cls.'">&nbsp;</span>'.chr(13).chr(10));
 		echo('<div style="'.$anim_cls.'">'.chr(13).chr(10));
-		echo('<h3>'.utf8_decode($fb_jdata['caption']).'</h3>'.chr(13).chr(10));
+		echo('<h3>'.$fb_jdata['caption'].'</h3>'.chr(13).chr(10));
 		echo('</div>'.chr(13).chr(10));
 		echo('</li>'.chr(13).chr(10));
 		echo(chr(13).chr(10));
